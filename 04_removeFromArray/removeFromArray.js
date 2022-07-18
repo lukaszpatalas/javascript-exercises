@@ -3,11 +3,12 @@
 // try remove forDeletion from store using splice()
 // return store
 
-const removeFromArray = function (store, forDeletion) {
-    for (let a = 0; a < store.length; a++) {
-        if (store[a] === forDeletion) {
-            console.log(store[a]);
-            store.splice(a, 1);
+const removeFromArray = function (store, ...forDeletion) {
+    for (const element of forDeletion) {
+        for (let a = 0; a < store.length; a++) {
+            if (store[a] === element) {
+                store.splice(a, 1);
+            }
         }
     }
     return store;
